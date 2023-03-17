@@ -1,0 +1,13 @@
+#!/usr/bin/bash
+composedb composite:create ./graphql/User.graphql --output=./json/User.json --did-private-key=<private_key> && 
+composedb composite:create ./graphql/Blog.graphql --output=./json/Blog.json --did-private-key=<private_key> &&
+composedb composite:create ./graphql/Fleet.graphql --output=./json/Fleet.json --did-private-key=<private_key> &&
+composedb composite:create ./graphql/Warden.graphql --output=./json/Warden.json --did-private-key=<private_key> &&
+composedb composite:create ./graphql/Favourite.graphql --output=./json/Favourite.json --did-private-key=<private_key> &&
+composedb composite:create ./graphql/UserFav.graphql --output=./json/UserFav.json --did-private-key=<private_key> &&
+composedb composite:create ./graphql/LeftSwipe.graphql --output=./json/LeftSwipe.json --did-private-key=<private_key> &&
+composedb composite:create ./graphql/RightSwipe.graphql --output=./json/RightSwipe.json --did-private-key=<private_key> &&
+composedb composite:create ./graphql/UserPref.graphql --output=./json/UserPref.json --did-private-key=<private_key> &&
+composedb composite:create ./graphql/Subscription.graphql --output=./json/Subscription.json --did-private-key=<private_key> &&
+composedb composite:create ./graphql/UserSub.graphql --output=./json/UserSub.json --did-private-key=<private_key> &&
+composedb composite:create ./graphql/UserWardens.graphql --output=./json/UserWardens.json --did-private-key=<private_key>
