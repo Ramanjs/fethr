@@ -1,0 +1,8 @@
+query getBlog($id: ID = "") {
+    node(id: $id) {
+        ... on Blog {
+            id
+            title
+        }
+    }
+}

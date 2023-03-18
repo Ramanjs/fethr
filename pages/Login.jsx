@@ -1,13 +1,33 @@
+import React, { useState, useContext, useEffect } from 'react'
 import ImageUploader from '@/components/ImageUploader'
 import Image from 'next/image'
 import camera from '@/public/camera.svg'
-import React, { useState } from 'react'
+import { useRouter } from 'next/router'
+import { AuthContext } from '@/context/AuthContext'
 
 function Login() {
+
+    useEffect(() => {
+        if(localStorage.getItem('user')&&localStorage.getItem('didsession')){
+            //router.push('/Home')
+            setStep(1)
+        }
+    },[])
+
+
+    const router = useRouter()
     const [step, setStep] = useState(0)
-    const [image, setImage] = useState(camera)
-    const [name, setName] = useState('')
-    const [user,setUser] = useState({})
+    // const [image, setImage] = useState(camera)
+    // const [name, setName] = useState('')
+    // const [user,setUser] = useState({})
+    const {address,connect} = useContext(AuthContext)
+
+
+    const login = async () => {
+        await connect().then(() => {
+            router.push('/Home')
+        });
+    }
 
     return (
         <>
@@ -25,7 +45,7 @@ function Login() {
                     </p>
                     <button 
                         className="bg-accent p-2 rounded-xl w-[10%] relative z-10" 
-                        onClick={(e) => setStep(1)}>
+                        onClick={(e) => login()}>
                             Connect
                     </button>
                     <div className="absolute z-0 top-[10%] animate splat blur-3xl">

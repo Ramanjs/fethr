@@ -1,0 +1,5 @@
+mutation addUser($userDID: DID = "", $name: String = "", $address: String = "") {
+  createUser(
+        input: {content: {name: $name, address: $address, userDID: $userDID}}
+  )
+}
