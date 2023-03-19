@@ -59,7 +59,7 @@ function Login() {
                 </div>
             )}
 
-            {step == 1 && (
+            {/* {step == 1 && (
                 <div className='w-screen h-screen flex flex-col gap-10 justify-center items-center py-20 mt-20 overflow-hidden select-none'>
                     <ImageUploader 
                         image={image}
@@ -92,7 +92,7 @@ function Login() {
                         />
                     </div>
                 </div>
-            )}
+            )} */}
         </>
     )
 }
